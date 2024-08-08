@@ -30,6 +30,7 @@ body {
 h1 {
     font-size: 5em;
     color: red;
+    margin-bottom: 40px; /* Add margin to create space below the question */
 }
 
 .slider {
@@ -52,6 +53,7 @@ p {
 @media (max-width: 768px) {
     h1 {
         font-size: 3em;
+        margin-bottom: 30px; /* Adjust margin for tablet screens */
     }
 
     p {
@@ -66,6 +68,7 @@ p {
 @media (max-width: 480px) {
     h1 {
         font-size: 2.5em;
+        margin-bottom: 20px; /* Adjust margin for phone screens */
     }
 
     p {
@@ -80,4 +83,3 @@ p {
         width: 90%;
     }
 }
-
