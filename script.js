@@ -32,7 +32,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
         const heart = document.createElement('div');
         heart.classList.add('heart');
         heart.textContent = '❤️';
-        heart.style.left = `${Math.random() * 500}%`;
+        heart.style.left = `${Math.random() * 100}%`;
         heart.style.animationDelay = `${Math.random() * 2}s`;
         heartsContainer.appendChild(heart);
 
@@ -42,17 +42,12 @@ document.addEventListener('DOMContentLoaded', (event) => {
     }
 
     window.addEventListener('scroll', () => {
-        const scrollPosition = window.scrollY;
-
-        if (scrollPosition > 0) {
-            stopHearts();
-        }
+        stopHearts(); // Stop hearts when scrolling down
 
         const secondContentTop = document.querySelector('.second-content').offsetTop;
         const scrollBottom = window.scrollY + window.innerHeight;
 
         if (scrollBottom >= secondContentTop) {
-            stopHearts(); // Stop hearts when angry face appears
             angryFace.style.display = 'block';
             setTimeout(() => {
                 angryFace.style.display = 'none';
