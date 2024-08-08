@@ -14,6 +14,7 @@ body {
     justify-content: flex-start;
     align-items: center;
     overflow-x: hidden; /* Prevent horizontal scrolling */
+    position: relative; /* Necessary for absolute positioning of hearts */
 }
 
 .content {
@@ -22,6 +23,7 @@ body {
     justify-content: center;
     align-items: center;
     width: 100%;
+    height: 100vh; /* Make content take full viewport height */
     padding: 20px;
     text-align: center;
     box-sizing: border-box; /* Ensure padding doesn't cause overflow */
@@ -49,6 +51,26 @@ p {
     margin-top: 20px;
 }
 
+#hearts-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none; /* Allow clicks to pass through */
+    overflow: hidden; /* Hide hearts when they go off-screen */
+}
+
+/* Heart animation */
+@keyframes fall {
+    0% {
+        transform: translateY(-100%) scale(0.5);
+    }
+    100% {
+        transform: translateY(100vh) scale(1);
+    }
+}
+
 /* Media Queries for Responsiveness */
 @media (max-width: 768px) {
     h1 {
@@ -66,6 +88,10 @@ p {
 }
 
 @media (max-width: 480px) {
+    .content {
+        justify-content: center; /* Center content vertically */
+    }
+
     h1 {
         font-size: 2.5em;
         margin-bottom: 20px; /* Adjust margin for phone screens */
@@ -82,4 +108,11 @@ p {
     .slider {
         width: 90%;
     }
+}
+
+.heart {
+    position: absolute;
+    top: -50px;
+    font-size: 2em;
+    animation: fall 4s linear infinite;
 }
