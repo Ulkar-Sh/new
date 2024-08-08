@@ -9,10 +9,6 @@ body {
     font-family: Arial, sans-serif;
     background-color: white;
     min-height: 100vh; /* Use min-height instead of height to avoid scroll issues */
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-    align-items: center;
     overflow-x: hidden; /* Prevent horizontal scrolling */
     position: relative; /* Necessary for absolute positioning of hearts */
 }
@@ -23,10 +19,18 @@ body {
     justify-content: center;
     align-items: center;
     width: 100%;
-    height: 100vh; /* Make content take full viewport height */
+    height: 100vh; /* Make each content section take full viewport height */
     padding: 20px;
     text-align: center;
     box-sizing: border-box; /* Ensure padding doesn't cause overflow */
+}
+
+.first-content {
+    height: 100vh; /* Ensure the first section takes full viewport height */
+}
+
+.second-content {
+    position: relative;
 }
 
 h1 {
@@ -52,13 +56,29 @@ p {
 }
 
 #hearts-container {
-    position: absolute;
+    position: fixed;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
     pointer-events: none; /* Allow clicks to pass through */
     overflow: hidden; /* Hide hearts when they go off-screen */
+}
+
+#angry-face {
+    font-size: 10em; /* Increased size */
+    opacity: 0.5; /* Set initial opacity to 50% */
+    display: none; /* Hide by default */
+    animation: fadeOut 2s forwards; /* Animation to fade out */
+}
+
+@keyframes fadeOut {
+    0% {
+        opacity: 0.5;
+    }
+    100% {
+        opacity: 0;
+    }
 }
 
 /* Heart animation */
@@ -69,6 +89,13 @@ p {
     100% {
         transform: translateY(100vh) scale(1);
     }
+}
+
+.heart {
+    position: absolute;
+    top: -50px;
+    font-size: 2em;
+    animation: fall 4s linear infinite;
 }
 
 /* Media Queries for Responsiveness */
@@ -108,11 +135,4 @@ p {
     .slider {
         width: 90%;
     }
-}
-
-.heart {
-    position: absolute;
-    top: -50px;
-    font-size: 2em;
-    animation: fall 4s linear infinite;
 }
