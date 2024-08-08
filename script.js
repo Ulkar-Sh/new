@@ -32,7 +32,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
         const heart = document.createElement('div');
         heart.classList.add('heart');
         heart.textContent = '❤️';
-        heart.style.left = `${Math.random() * 100}%`;
+        heart.style.left = `${Math.random() * 500}%`;
         heart.style.animationDelay = `${Math.random() * 2}s`;
         heartsContainer.appendChild(heart);
 
