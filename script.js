@@ -54,10 +54,9 @@ document.addEventListener('DOMContentLoaded', (event) => {
         if (scrollBottom >= secondContentTop) {
             stopHearts(); // Stop hearts when angry face appears
             angryFace.style.display = 'block';
-            angryFace.classList.add('fade-out');
             setTimeout(() => {
                 angryFace.style.display = 'none';
-            }, 2000); // Hide after 2 seconds
+            }, 5000); // Hide after 5 seconds
         } else {
             angryFace.style.display = 'none';
         }

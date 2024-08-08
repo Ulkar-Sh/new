@@ -6,7 +6,7 @@
 }
 
 body {
-    font-family: Arial, sans-serif;
+    font-family: 'Helvetica Neue', Arial, sans-serif;
     background-color: white;
     min-height: 100vh; /* Use min-height instead of height to avoid scroll issues */
     overflow-x: hidden; /* Prevent horizontal scrolling */
@@ -53,6 +53,7 @@ p {
     font-size: 2em;
     color: black;
     margin-top: 20px;
+    font-style: italic;
 }
 
 #hearts-container {
@@ -66,15 +67,15 @@ p {
 }
 
 #angry-face {
-    font-size: 10em; /* Increased size */
-    opacity: 0.5; /* Set initial opacity to 50% */
+    font-size: 15em; /* Increased size */
+    opacity: 0.7; /* Set initial opacity to 70% */
     display: none; /* Hide by default */
-    animation: fadeOut 2s forwards; /* Animation to fade out */
+    animation: fadeOut 5s forwards; /* Animation to fade out slowly */
 }
 
 @keyframes fadeOut {
     0% {
-        opacity: 0.5;
+        opacity: 0.7;
     }
     100% {
         opacity: 0;
@@ -112,6 +113,10 @@ p {
     .scroll-text {
         font-size: 1.5em;
     }
+
+    #angry-face {
+        font-size: 10em; /* Adjust size for smaller screens */
+    }
 }
 
 @media (max-width: 480px) {
@@ -134,5 +139,9 @@ p {
 
     .slider {
         width: 90%;
+    }
+
+    #angry-face {
+        font-size: 8em; /* Adjust size for phone screens */
     }
 }
