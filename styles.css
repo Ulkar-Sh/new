@@ -2,7 +2,7 @@ body {
     margin: 0;
     font-family: Arial, sans-serif;
     background-color: white;
-    height: 120vh; /* Make the page scrollable */
+    height: 200vh; /* Make the page scrollable */
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
@@ -11,6 +11,7 @@ body {
 
 .content {
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
     height: 100vh;
@@ -21,4 +22,20 @@ h1 {
     font-size: 5em;
     color: red;
     text-align: center;
+}
+
+.slider {
+    width: 80%;
+    max-width: 600px;
+    margin: 20px 0;
+}
+
+p {
+    font-size: 1.5em;
+}
+
+.scroll-text {
+    font-size: 2em;
+    color: black;
+    margin-top: 20px;
 }
